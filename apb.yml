@@ -12,9 +12,9 @@ metadata:
   longDescription: "An APB deploys Eclipse Che v6.x with persistent storage"
   displayName: "Eclipse Che (APB)"
   dependencies:
-    - "docker.io/eclipse/che-server:nightly"
+    - "docker.io/eclipse/che-server:latest-centos"
     - "docker.io/jboss/keycloak-openshift:3.4.3.Final"
-    - "docker.io/rhscl/postgresql-96-rhel7:latest"
+    - "docker.io/centos/postgresql-96-centos7:latest"
 plans:
   - name: prod
     description: Persistent deployment of Eclipse Che
@@ -28,7 +28,7 @@ plans:
         type: enum
         enum: ["nightly-centos", "nightly", "latest-centos", "latest"]
         required: false
-        default: "nightly"
+        default: "latest-centos"
         display_group: Che Configuration
       - name: "che_server_deployment_stragety"
         title: Che Deployment Stragety
